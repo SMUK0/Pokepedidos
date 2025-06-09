@@ -1,0 +1,134 @@
+/* src/assets/css/Modulo_pagos.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4FC3F7;
+  --primary-dark: #0288D1;
+  --bg-gradient: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+  --card-bg: #fff;
+  --shadow: rgba(0,0,0,0.1);
+  --fg-dark: #0D47A1;
+  --font: 'Poppins', sans-serif;
+}
+
+html, body, #root {
+  margin:0; padding:0;
+  width:100%; height:100%;
+  background: var(--bg-gradient);
+  overflow-x:hidden;
+  font-family: var(--font);
+}
+
+.pagos-container {
+  width:100%; min-height:100vh;
+  padding:2rem 1rem;
+  color: var(--fg-dark);
+}
+
+.page-title {
+  text-align:center;
+  font-size:2.5rem;
+  color: var(--primary-dark);
+  margin-bottom:1.5rem;
+}
+
+.tabs {
+  display:flex; flex-wrap:wrap; gap:.75rem;
+  justify-content:center; margin-bottom:2rem;
+}
+.tab {
+  padding:.75rem 1.25rem;
+  background:var(--card-bg);
+  border-radius:50px;
+  box-shadow:0 2px 8px var(--shadow);
+  cursor:pointer; font-weight:500;
+  color: var(--fg-dark);
+  transition:all .3s;
+}
+.tab:hover { transform: translateY(-2px); }
+.tab.active {
+  background:var(--primary);
+  color:#fff;
+  box-shadow:0 4px 16px var(--shadow);
+}
+
+.formulario, .list, .table-container {
+  width:100%;
+}
+
+.formulario {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1rem;
+  background:var(--card-bg);
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px var(--shadow);
+  margin-bottom:2rem;
+}
+.formulario label {
+  display:block; margin-bottom:.5rem;
+}
+.formulario input {
+  width:100%; padding:.75rem 1rem;
+  border:1px solid var(--primary); border-radius:6px;
+  transition:box-shadow .2s;
+}
+.formulario input:focus {
+  box-shadow:0 0 6px var(--shadow);
+  outline:none;
+}
+.error {
+  color:#e53e3e; font-size:.875rem; margin-top:.25rem;
+}
+
+.table-container {
+  overflow-x:auto; margin-bottom:2rem;
+}
+.table {
+  width:100%; border-collapse:collapse;
+  background:var(--card-bg); box-shadow:0 4px 12px var(--shadow);
+  border-radius:8px; overflow:hidden;
+}
+.table th, .table td {
+  padding:1rem; text-align:left;
+}
+.table th {
+  background:var(--primary); color:#fff;
+}
+.table tr:nth-child(even) {
+  background:#f7f9fc;
+}
+
+.list {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+}
+
+.estado-card {
+  background:var(--card-bg);
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px var(--shadow);
+  display:flex; flex-direction:column; gap:.5rem;
+}
+
+.button {
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#fff; border:none;
+  padding:.75rem 1.5rem; border-radius:8px;
+  cursor:pointer; font-weight:500;
+  transition:opacity .2s,transform .2s;
+}
+.button:hover {
+  opacity:.9; transform: translateY(-2px);
+}
+.button.small {
+  padding:.5rem 1rem; font-size:.9rem;
+}
+
+@media (max-width:768px) {
+  .formulario { grid-template-columns:1fr; }
+  .button, .button.small { width:100%; }
+}  
